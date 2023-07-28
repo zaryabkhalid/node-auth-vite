@@ -1,12 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import RootLayout from "../layout/RootLayout";
-import Home from "../pages/Home";
-import Contact from "../pages/Contact";
-import About from "../pages/About";
-import Articles from "../pages/Articles";
-import Projects from "../pages/Projects";
-import Login from "../pages/Login";
-import Registeration from "../pages/Registeration";
+import { Home, About, Articles, Projects, Contact, Registeration, Login, ForgetPassword } from "../pages";
 
 function Router() {
 	return (
@@ -22,6 +16,7 @@ function Router() {
 				</Route>
 				<Route path="login" element={<Login />} />
 				<Route path="signup" element={<Registeration />} />
+				<Route path="forget-password" element={<ForgetPassword />} />
 			</Routes>
 		</BrowserRouter>
 	);

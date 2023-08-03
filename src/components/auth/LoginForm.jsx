@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Button from "../../components/Button";
 import FormControl from "../../components/FormControl";
 import Spinner from "../../components/Spinner.jsx";
-import loginFormSchema from "../../validations/loginValidation";
+import loginFormSchema from "../../validations/FormsValidation";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 import { useForm } from "react-hook-form";
@@ -20,8 +20,7 @@ const LoginForm = () => {
 	});
 	const { errors, isDirty, isSubmitted } = formState;
 
-	const submitData = data => {
-		console.log(isSubmitted);
+	const submitData = async data => {
 		setTimeout(() => {
 			console.log(data);
 			reset({ email: "", password: "" });
@@ -30,7 +29,7 @@ const LoginForm = () => {
 	};
 
 	return (
-		<article>
+		<>
 			<h2 className="text-center text-4xl font-bold text-sky-500  lg:text-7xl mb-12">Login</h2>
 			<form onSubmit={handleSubmit(submitData)} noValidate>
 				<FormControl type="email" name="email" label="Email" placeholder="Your Email" errors={errors} register={register} required={true} />
@@ -79,7 +78,7 @@ const LoginForm = () => {
 					</Link>
 				</div>
 			</div>
-		</article>
+		</>
 	);
 };
 

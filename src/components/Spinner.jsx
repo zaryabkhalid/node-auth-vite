@@ -1,20 +1,19 @@
 import ClipLoader from "react-spinners/ClipLoader";
 
-const Spinner = props => {
+const Spinner = (props) => {
 	return (
-		<div className=" flex justify-center items-center">
+		<span>
 			<ClipLoader
 				cssOverride={{
-					display: "block",
 					margin: "0 auto",
 				}}
 				color={props.color}
 				loading={props.submitting}
-				size={50}
+				size={30}
 				aria-label="Loading Spinner"
 				data-testid="loader"
 			/>
-		</div>
+		</span>
 	);
 };
 
